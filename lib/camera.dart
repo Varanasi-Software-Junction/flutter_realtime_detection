@@ -56,7 +56,11 @@ class _CameraState extends State<Camera> {
               ).then((recognitions) {
                 int endTime = new DateTime.now().millisecondsSinceEpoch;
                 print("Detection took ${endTime - startTime}");
-
+                for (dynamic d in recognitions)
+                  {
+                    if(!d.toString().toLowerCase().contains("car"))
+                      recognitions.remove(d);
+                  }
                 widget.setRecognitions(recognitions, img.height, img.width);
 
                 isDetecting = false;
