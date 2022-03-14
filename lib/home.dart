@@ -75,24 +75,28 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("VSJ Object Detector"),
+        centerTitle: true,
+      ),
       body: _model == ""
           ? Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  RaisedButton(
+                  ElevatedButton(
                     child: const Text(ssd),
                     onPressed: () => onSelect(ssd),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     child: const Text(yolo),
                     onPressed: () => onSelect(yolo),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     child: const Text(mobilenet),
                     onPressed: () => onSelect(mobilenet),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     child: const Text(posenet),
                     onPressed: () => onSelect(posenet),
                   ),
